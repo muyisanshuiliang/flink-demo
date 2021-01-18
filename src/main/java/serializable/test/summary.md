@@ -1,0 +1,13 @@
+## 一、Serializable
+1. 如果对象没有继承`Serializable`接口，则不能被实例化，否则会报异常`java.io.NotSerializableException`;
+2. 一个对象要进行序列化，如果该对象成员变量是`引用类型`的，那这个引用类型也一定要是可序列化的，否则会报异常`java.io.NotSerializableException`;
+3. 静态变量无论怎么都不会被序列化;
+4. 特别注意：如果序列化一个可变对象，序列化之后，修改对象属性值，再次序列化，只会保存上次序列化的编号;
+## 二、Externalizable
+1. 实现方法`writeExternal`和`readExternal`可以自定义对象的序列化和反序列化数据；
+2. 如果序列化时一个字段没有序列化，那反序列化是要注意别给为序列化的字段反序列化，否则会报异常`ava.io.OptionalDataException`
+## 三、transient
+1. 针对`Serializable`接口：被关键字`transient`修饰的字段不会被序列化;
+2. 针对`Externalizable`接口：被关键字`transient`修饰的字段可以通过自定义序列化和反序列化规则进行修改;
+## 四、static
+1. 被`static`关键字修饰的字段，无论怎样都不会被序列化;

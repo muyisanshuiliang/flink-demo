@@ -13,12 +13,12 @@ import java.util.List;
  */
 public class Main {
     public static void main(String[] args) {
-        serializableFun();
-        deserializableFun();
+//        serializableFun();
+//        deserializableFun();
         serializableOtherPersonFun();
         deserializableOtherPersonFun();
-
-        serializableListFun();
+//
+//        serializableListFun();
     }
 
     private static void serializableOtherPersonFun() {
@@ -56,6 +56,7 @@ public class Main {
         person.setDate(new Date());
         person.setAddress("四川省成都市");
         person.setBrother(new Brother(3, "yangLang's brother"));
+        System.out.println(person);
         try (FileOutputStream fileOutputStream = new FileOutputStream("src\\main\\java\\serializable\\test\\Person.txt");
              ObjectOutputStream objectOutputStream = new ObjectOutputStream(fileOutputStream)) {
             objectOutputStream.writeObject(person);

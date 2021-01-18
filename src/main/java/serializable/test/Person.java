@@ -21,6 +21,8 @@ public class Person implements Serializable {
     private String name;
     private Date date;
 
+    private static String book = "《JAVA-从入门到放弃》";
+
     /*一个对象要进行序列化，如果该对象成员变量是引用类型的，那这个引用类型也一定要是可序列化的，否则会报错*/
     private Brother brother;
 
